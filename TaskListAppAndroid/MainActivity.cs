@@ -13,6 +13,9 @@ namespace TaskListAppAndroid
     [Activity(Label = "Android TaskList", Theme = "@style/AppTheme", MainLauncher = false)]
     public class MainActivity : ListActivity
     {
+
+        //AddTaskActivity addTaskActivity = new AddTaskActivity();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -20,13 +23,23 @@ namespace TaskListAppAndroid
             SetContentView(Resource.Layout.activity_main);
 
             var tasks = Intent.Extras.GetStringArrayList("tasks") ?? new string[0];
-            this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemMultipleChoice, tasks);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemMultipleChoice, tasks);
+            ListAdapter = adapter;
 
-            Button addTaskView = FindViewById<Button>(Resource.Id.AddTaskViewButton);
-            addTaskView.Click += (sender, e) =>
-            {
-                StartActivity(typeof(AddTaskActivity));
-            };
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = "My Toolbar";
         }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.Menu1, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            StartActivity(typeof(AddTaskActivity));
+            return base.OnOptionsItemSelected(item);
+        }
+
     }
 }

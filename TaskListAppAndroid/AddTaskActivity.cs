@@ -16,6 +16,10 @@ namespace TaskListAppAndroid
     public class AddTaskActivity : Activity
     {
         static readonly List<string> Tasks = new List<string>();
+        public List<string> GetTaskList()
+        {
+            return Tasks;
+        }
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -53,7 +57,10 @@ namespace TaskListAppAndroid
             cancelButton.Click += (sender, e) =>
             {
                 //Return to Main Activity
-                StartActivity(typeof(MainActivity));
+                //StartActivity(typeof(MainActivity));
+                var intent = new Intent(this, typeof(MainActivity));
+                intent.PutStringArrayListExtra("tasks", Tasks);
+                StartActivity(intent);
             };
         }
     }

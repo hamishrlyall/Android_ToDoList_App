@@ -2330,8 +2330,8 @@ namespace TaskListAppAndroid
 			// aapt resource value: 0x7f08008e
 			public const int AddTaskButton = 2131230862;
 			
-			// aapt resource value: 0x7f08008b
-			public const int AddTaskViewButton = 2131230859;
+			// aapt resource value: 0x7f0800b5
+			public const int AddTaskView = 2131230901;
 			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
@@ -2822,6 +2822,9 @@ namespace TaskListAppAndroid
 			// aapt resource value: 0x7f08006f
 			public const int title_template = 2131230831;
 			
+			// aapt resource value: 0x7f08008b
+			public const int toolbar = 2131230859;
+			
 			// aapt resource value: 0x7f08003e
 			public const int top = 2131230782;
 			
@@ -3107,7 +3110,10 @@ namespace TaskListAppAndroid
 			public const int support_simple_spinner_dropdown_item = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int tooltip = 2130968637;
+			public const int Toolbar = 2130968637;
+			
+			// aapt resource value: 0x7f04003e
+			public const int tooltip = 2130968638;
 			
 			static Layout()
 			{
@@ -3115,6 +3121,22 @@ namespace TaskListAppAndroid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0e0000
+			public const int Menu1 = 2131623936;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
@@ -3789,6 +3811,9 @@ namespace TaskListAppAndroid
 			
 			// aapt resource value: 0x7f0a0161
 			public const int Base_Widget_Design_TabLayout = 2131362145;
+			
+			// aapt resource value: 0x7f0a0181
+			public const int MyTheme = 2131362177;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int Platform_AppCompat = 2131361822;
