@@ -13,15 +13,13 @@ namespace Core
 {
     public class TaskAdder
     {
-        public static string AddTask(string raw)
+        public static string AddTask(string task)
         {
-            if (string.IsNullOrWhiteSpace(raw))
+            if (string.IsNullOrWhiteSpace(task))
                 return "";
             else
-                raw = raw.ToUpperInvariant();
 
-            var newTask = raw;
-            return newTask.ToString();
+            return task;
         }
     }
 }
